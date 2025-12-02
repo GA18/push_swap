@@ -1,0 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/02 13:19:19 by g-alves-          #+#    #+#             */
+/*   Updated: 2025/12/02 19:06:46 by g-alves-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+
+int	ft_atoi(const char *nptr)
+{
+	size_t	index_string;
+	int		sign;
+	int		number;
+
+	index_string = 0;
+	while ((nptr[index_string] == ' ')
+		|| ((nptr[index_string] >= 9)
+			&& (nptr[index_string] <= 13)))
+		index_string++;
+	sign = 1;
+	if ((nptr[index_string] == '-') || (nptr[index_string] == '+'))
+	{
+		if (nptr[index_string] == '-')
+			sign = -1;
+		index_string++;
+	}
+	number = 0;
+	while ((nptr[index_string] >= '0') && (nptr[index_string] <= '9'))
+	{
+		number = (number * 10) + (nptr[index_string] - '0');
+		index_string++;
+	}
+	return (sign * number);
+}
+
+int	ft_check_alocate(int *int_convert)
+{
+	if (!int_convert)
+		exit(1);
+	return (0);
+}
