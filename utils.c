@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:19:19 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/12/02 19:06:46 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/12/05 15:30:29 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,20 @@ int	ft_atoi(const char *nptr)
 	return (sign * number);
 }
 
-int	ft_check_alocate(int *int_convert)
+int	ft_check_alocate(void *check_string)
 {
-	if (!int_convert)
+	if (!check_string)
 		exit(1);
-	return (0);
+	return (1);
 }
+
+size_t	ft_strlen(const char *l)
+{
+	size_t	length;
+
+	length = 0;
+	while (*l++)
+		length++;
+	return (length);
+}
+

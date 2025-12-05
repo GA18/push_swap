@@ -1,12 +1,12 @@
 NAME = push_swap.a
 
-SRC = main.c push_swap.c utils.c
+SRC = main.c	push_swap.c	utils.c	parser.c
 
 OBJ = $(SRC:%.c=%.o)
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
