@@ -6,36 +6,39 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:08:26 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/12/05 18:30:34 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/12/08 21:24:27 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*ft_mini_split(char **string)
+char	*ft_get_substring(char **string)
 {
-	int		index_possible_number;
-	char	*array_for_string;
+	int		possible_number;
+	int		count_string;
+	char	*substring;
+	char	*tmp;
 
-	index_possible_number = 0;
-	array_for_string = malloc(9 * sizeof(char));
-	ft_check_alocate(array_for_string);
-	while ((**string && ((**string >= '0' && **string <= '9')
-				|| **string == ' ' || **string == '-' || **string == '+')))
+	possible_number = 0;
+	tmp = *string;
+	while (!((tmp[possible_number] >= '0' && tmp[possible_number] <= '9')
+			|| tmp[possible_number] == ' '))
 	{
-		while (**string != ' ')
-		{
-			array_for_string[index_possible_number++] = **string;
-			string++;
-		}
-		if (**string == ' ')
-		{
-			array_for_string[index_possible_number] = '\0';
-			write (1, array_for_string, ft_strlen(array_for_string));
-			return (array_for_string);
-		}
-		string++;
+		write(1, "Error", 5);
+		possible_number++;
 	}
-	write(1, "Error", 5);
-	return (NULL);
+	count_string = 0;
+	while (tmp[count_string] != ' ')
+		count_string++;
+	substring = malloc((count_string + 1) * sizeof(char));
+	possible_number = 0;
+	while (tmp[possible_number] != ' ')
+	{
+		substring[possible_number] = tmp[possible_number];
+		possible_number++;
+	}
+	(*string) += possible_number + count_string;
+	substring[possible_number] = '\0';
+	write(1, substring, ft_strlen(substring));
+	return (substring);
 }
