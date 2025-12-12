@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:18:33 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/12/11 21:25:34 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/12/12 08:41:59 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,6 @@ int	main(int argc, char *argv[])
 		pos_string = 0;
 	}
 	if (stack.total == 0)
-	{
-		write (1, "Error", 5);
-		exit(1);
-	}
+		ft_msg_error();
 	printf("O total de argumentos recebidos: %d\n", stack.total);
 }

@@ -1,4 +1,4 @@
-NAME = push_swap.a
+NAME = push_swap
 
 SRC = main.c	push_swap.c	utils.c	parser.c
 

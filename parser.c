@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:08:26 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/12/11 22:57:01 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/12/12 08:31:33 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ int	ft_valid_numbers(char	**string_arg)
 	while (**string_arg && **string_arg != ' ')
 	{
 		if (ft_is_number(string_arg))
-		{
-			write (1, "Error", 5);
-			exit(1);
-		}
+			ft_msg_error();
 	}
 	return (1);
 }
@@ -34,10 +31,7 @@ int	ft_is_number(char **string_arg)
 	if (**string_arg == '+' || **string_arg == '-')
 	{
 		if (*(*string_arg + 1) < '0' || *(*string_arg + 1) > '9')
-		{
-			write(1, "Error", 5);
-			exit(1);
-		}
+			ft_msg_error();
 		else
 			(*string_arg)++;
 	}

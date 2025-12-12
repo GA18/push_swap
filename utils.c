@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:19:19 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/12/05 15:30:29 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/12/12 08:30:48 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,12 @@ int	ft_check_alocate(void *check_string)
 	if (!check_string)
 		exit(1);
 	return (1);
+}
+
+void	ft_msg_error(void)
+{
+	write(1, "Error", 5);
+	exit(1);
 }
 
 size_t	ft_strlen(const char *l)
