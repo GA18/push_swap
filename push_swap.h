@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 18:22:58 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/12/08 20:23:36 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/12/11 20:54:53 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,19 @@
 # include <stdio.h>
 # include <unistd.h>
 
+typedef struct s_stacks
+{
+	int	*stack_a;
+	int	*stack_b;
+	int	total;
+}	t_stacks;
+
 int				main(int argc, char *argv[]);
 int				ft_atoi(const char *nptr);
 int				ft_check_alocate(void	*check_string);
 size_t			ft_strlen(const char *l);
 char			*ft_get_substring(char **string);
+int				ft_valid_numbers(char	**string_arg);
+int				ft_is_number(char **string_arg);
 
 #endif
