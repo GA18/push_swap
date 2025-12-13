@@ -6,12 +6,11 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:19:19 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/12/12 08:30:48 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/12/12 09:36:07 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 int	ft_atoi(const char *nptr)
 {
@@ -62,4 +61,3 @@ size_t	ft_strlen(const char *l)
 		length++;
 	return (length);
 }
-

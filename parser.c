@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:08:26 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/12/12 08:31:33 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/12/12 21:56:12 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,38 +42,22 @@ int	ft_is_number(char **string_arg)
 	return (1);
 }
 
-// char	*ft_get_substring(char **string)
-// {
-// 	int		possible_number;
-// 	int		count_string;
-// 	char	*substring;
-// 	char	*tmp;
+int	init_stack_a(char **string_arg, int index_arg, t_stacks *fill_st_a)
+{
+	char		*number;
 
-// 	possible_number = 0;
-// 	tmp = *string;
-// 	while (!((tmp[possible_number] >= '0' && tmp[possible_number] <= '9')
-// 			|| tmp[possible_number] == ' '))
-// 	{
-// 		write(1, "Error", 5);
-// 		possible_number++;
-// 	}
-// 	count_string = 0;
-// 	while (tmp[count_string] != ' ')
-// 		count_string++;
-// 	substring = malloc((count_string + 1) * sizeof(char));
-// 	possible_number = 0;
-// 	while (tmp[possible_number] != ' ')
-// 	{
-// 		substring[possible_number] = tmp[possible_number];
-// 		possible_number++;
-// 		(*string)++;
-// 	}
-// 	while (tmp[count_string] == ' ')
-// 	{
-// 		count_string++;
-// 		(*string)++;
-// 	}
-// 	substring[possible_number] = '\0';
-// 	write(1, substring, ft_strlen(substring));
-// 	return (substring);
-// }
+	while ((*string_arg)[index_arg] && (*string_arg)[index_arg] != ' ')
+		index_arg++;
+	number = malloc((index_arg + 1) * sizeof(char));
+	ft_check_alocate(number);
+	number[index_arg] = '\0';
+	while (index_arg--)
+		number[index_arg] = *(*string_arg)++;
+	fill_st_a->stack_a[fill_st_a->size_a] = ft_atoi(number);
+	free(number);
+	while (**string_arg && **string_arg == ' ')
+		(*string_arg)++;
+	if(!(**string_arg))
+		return(0);
+	return (1);
+}

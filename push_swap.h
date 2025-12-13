@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 18:22:58 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/12/12 08:30:59 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/12/12 21:53:50 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ typedef struct s_stacks
 {
 	int	*stack_a;
 	int	*stack_b;
+	int	size_a;
+	int	size_b;
 	int	total;
 }	t_stacks;
 
@@ -32,5 +34,7 @@ char			*ft_get_substring(char **string);
 int				ft_valid_numbers(char	**string_arg);
 int				ft_is_number(char **string_arg);
 void			ft_msg_error(void);
+int				init_stack_a(char **string_arg, int index_arg,
+					t_stacks *fill_st_a);
 
 #endif
