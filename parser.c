@@ -6,11 +6,43 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:08:26 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/12/12 21:56:12 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/12/13 13:59:02 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_parser(int index_arg, int argc, char **argv, t_stacks *stack)
+{
+	char	*string_arg;
+
+	stack->total = 0;
+	while (index_arg < argc)
+	{
+		string_arg = argv[index_arg];
+		while (*string_arg)
+			stack->total += ft_valid_numbers(&string_arg);
+		index_arg++;
+	}
+	if (stack->total == 0)
+		ft_msg_error();
+}
+
+void	ft_init_stack_a(int index_arg, int argc, char **argv, t_stacks *stack)
+{
+	char	*string_arg;
+
+	stack->a = malloc(stack->total * sizeof(int));
+	ft_check_alocate(stack->a);
+	stack->index_a = 0;
+	while (index_arg < argc)
+	{
+		string_arg = argv[index_arg];
+		while (*string_arg)
+			stack->index_a += ft_fill_stack_a(&string_arg, 0, stack);
+		index_arg++;
+	}
+}
 
 int	ft_valid_numbers(char	**string_arg)
 {
@@ -42,22 +74,22 @@ int	ft_is_number(char **string_arg)
 	return (1);
 }
 
-int	init_stack_a(char **string_arg, int index_arg, t_stacks *fill_st_a)
+int	ft_fill_stack_a(char **string_arg, int index_arg, t_stacks *fill_st_a)
 {
 	char		*number;
+	int			count_revert_order;
 
 	while ((*string_arg)[index_arg] && (*string_arg)[index_arg] != ' ')
 		index_arg++;
 	number = malloc((index_arg + 1) * sizeof(char));
 	ft_check_alocate(number);
 	number[index_arg] = '\0';
-	while (index_arg--)
-		number[index_arg] = *(*string_arg)++;
-	fill_st_a->stack_a[fill_st_a->size_a] = ft_atoi(number);
+	count_revert_order = 0;
+	while (index_arg > count_revert_order)
+		number[count_revert_order++] = *(*string_arg)++;
+	fill_st_a->a[fill_st_a->index_a] = ft_atoi(number);
 	free(number);
 	while (**string_arg && **string_arg == ' ')
 		(*string_arg)++;
-	if(!(**string_arg))
-		return(0);
 	return (1);
 }
