@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 18:22:58 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/12/13 14:06:41 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/12/29 22:41:51 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct s_stacks
 {
@@ -26,8 +27,7 @@ typedef struct s_stacks
 	int	total;
 }	t_stacks;
 
-int				main(int argc, char *argv[]);
-int				ft_atoi(const char *nptr);
+int				ft_atoi(char *nptr, t_stacks *stack);
 int				ft_check_alocate(void	*check_string);
 size_t			ft_strlen(const char *l);
 char			*ft_get_substring(char **string);
@@ -41,5 +41,9 @@ void			ft_init_stack_a(int index_arg, int argc, char **argv,
 int				ft_fill_stack_a(char **string_arg, int index_arg,
 					t_stacks *fill_st_a);
 void			test_print(int len, t_stacks *stack);
+void			swap_a(t_stacks *stack);
+void			swap_b(t_stacks *stack);
+void			swap_a_and_b(t_stacks *stack);
+void			ft_check_duplicate(t_stacks *fill_st_a);
 
 #endif

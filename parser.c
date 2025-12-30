@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:08:26 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/12/13 13:59:02 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/12/29 22:40:39 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,14 @@ void	ft_parser(int index_arg, int argc, char **argv, t_stacks *stack)
 {
 	char	*string_arg;
 
+	if (argc < 2)
+		exit (1);
 	stack->total = 0;
 	while (index_arg < argc)
 	{
 		string_arg = argv[index_arg];
+		if (!*string_arg)
+			ft_msg_error();
 		while (*string_arg)
 			stack->total += ft_valid_numbers(&string_arg);
 		index_arg++;
@@ -39,9 +43,13 @@ void	ft_init_stack_a(int index_arg, int argc, char **argv, t_stacks *stack)
 	{
 		string_arg = argv[index_arg];
 		while (*string_arg)
+		{
 			stack->index_a += ft_fill_stack_a(&string_arg, 0, stack);
+			ft_check_duplicate(stack);
+		}
 		index_arg++;
 	}
+	stack->index_b = 0;
 }
 
 int	ft_valid_numbers(char	**string_arg)
@@ -79,6 +87,8 @@ int	ft_fill_stack_a(char **string_arg, int index_arg, t_stacks *fill_st_a)
 	char		*number;
 	int			count_revert_order;
 
+	while ((**string_arg && **string_arg == ' ') || **string_arg == '+')
+		(*string_arg)++;
 	while ((*string_arg)[index_arg] && (*string_arg)[index_arg] != ' ')
 		index_arg++;
 	number = malloc((index_arg + 1) * sizeof(char));
@@ -87,7 +97,7 @@ int	ft_fill_stack_a(char **string_arg, int index_arg, t_stacks *fill_st_a)
 	count_revert_order = 0;
 	while (index_arg > count_revert_order)
 		number[count_revert_order++] = *(*string_arg)++;
-	fill_st_a->a[fill_st_a->index_a] = ft_atoi(number);
+	fill_st_a->a[fill_st_a->index_a] = ft_atoi(number, fill_st_a);
 	free(number);
 	while (**string_arg && **string_arg == ' ')
 		(*string_arg)++;
