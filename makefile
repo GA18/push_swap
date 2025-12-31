@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRC = main.c	utils.c	parser.c operations.c
+SRC = main.c	utils.c	parser.c push_swap.c operations.c
 
 OBJ = $(SRC:%.c=%.o)
 

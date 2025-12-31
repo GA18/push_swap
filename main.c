@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:18:33 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/12/29 22:31:19 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/12/30 22:37:18 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ int	main(int argc, char **argv)
 	//ft_controler(&stack);
 	//test_print(0, &stack);
 	// swap_a(&stack);
+	//test_print(0, &stack);
+	ft_push(stack.a, stack.b, &stack.index_a, &stack.index_b);
+	ft_push(stack.a, stack.b, &stack.index_a, &stack.index_b);
+	ft_push(stack.a, stack.b, &stack.index_a, &stack.index_b);
+	test_print(0, &stack);
+	ft_push(stack.b, stack.a, &stack.index_b, &stack.index_a);
+	ft_push(stack.b, stack.a, &stack.index_b, &stack.index_a);
 	test_print(0, &stack);
 	free(stack.a);
 	free(stack.b);
@@ -30,12 +37,20 @@ int	main(int argc, char **argv)
 
 void	test_print(int len, t_stacks *stack)
 {
-	printf("O tamanho do array é: %i\n", stack->index_a);
+	printf("\nO tamanho do array é A é: %i\n", stack->index_a);
+	printf("O tamanho do array é B é: %i\n\n", stack->index_b);
 	while (stack->index_a > len)
 	{
-		printf("O argumento na posição %i: %i\n", len, stack->a[len]);
+		printf("Stack A na posição %i é: %i\n", len, stack->a[len]);
 		len++;
 	}
-	printf("o tamanho de stack.a é: %i\n", stack->index_a);
-	printf("o tamanho de stack.b é: %i\n", stack->index_b);
+	len = 0;
+	printf("\n");
+	while (stack->index_b > len)
+	{
+		printf("Stack B na posição %i é: %i\n", len, stack->b[len]);
+		len++;
+	}
+	printf("\nTamanho de stack.a é: %i\n", stack->index_a);
+	printf("Tamanho de stack.b é: %i\n\n", stack->index_b);
 }

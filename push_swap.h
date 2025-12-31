@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 18:22:58 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/12/29 22:41:51 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/12/30 22:25:43 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,12 @@ void			ft_init_stack_a(int index_arg, int argc, char **argv,
 					t_stacks *stack);
 int				ft_fill_stack_a(char **string_arg, int index_arg,
 					t_stacks *fill_st_a);
-void			test_print(int len, t_stacks *stack);
-void			swap_a(t_stacks *stack);
-void			swap_b(t_stacks *stack);
-void			swap_a_and_b(t_stacks *stack);
 void			ft_check_duplicate(t_stacks *fill_st_a);
+void			test_print(int len, t_stacks *stack);
+void			ft_swap(int *stack);
+void			ft_push(int *origin, int *destiny, int *size_o, int *size_d);
+void			ft_shift_up(int *stack, int *size);
+void			ft_shift_down(int *stack, int *size);
+
 
 #endif
