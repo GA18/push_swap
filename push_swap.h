@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 18:22:58 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/12/30 22:25:43 by g-alves-         ###   ########.fr       */
+/*   Updated: 2026/01/03 17:56:15 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,10 @@ void			ft_check_duplicate(t_stacks *fill_st_a);
 void			test_print(int len, t_stacks *stack);
 void			ft_swap(int *stack);
 void			ft_push(int *origin, int *destiny, int *size_o, int *size_d);
-void			ft_shift_up(int *stack, int *size);
-void			ft_shift_down(int *stack, int *size);
+void			ft_rotate(int *stack, int *size);
+void			ft_reverse_rotate(int *stack, int *size);
+void			ft_remove_top(int *stack, int *size);
+void			ft_remove_down(int *stack, int *size);
 
 
 #endif

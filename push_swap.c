@@ -6,40 +6,32 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 18:28:53 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/12/30 22:16:30 by g-alves-         ###   ########.fr       */
+/*   Updated: 2026/01/03 17:55:53 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_shift_up(int *stack, int *size)
+void	ft_remove_top(int *stack, int *size)
 {
 	int	index;
-	int	tmp;
 
 	index = 0;
-	tmp = stack[0];
-	while (index < *size)
+	while (index < (*size - 1))
 	{
 		stack[index] = stack[index + 1];
 		index++;
 	}
-	stack[index] = tmp;
-	(*size)--;
 }
 
-void	ft_shift_down(int *stack, int *size)
+void	ft_remove_down(int *stack, int *size)
 {
 	int	index;
-	int	len;
 
-	index = 1;
-	len = *size;
-	while (index <= *size)
+	index = *size - 1;
+	while (index > 0)
 	{
-		stack[len] = stack[len - 1];
-		index++;
-		len--;
+		stack[index] = stack[index - 1];
+		index--;
 	}
-	(*size)++;
 }

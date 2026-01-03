@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:18:33 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/12/30 22:37:18 by g-alves-         ###   ########.fr       */
+/*   Updated: 2026/01/03 16:45:18 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ int	main(int argc, char **argv)
 	//test_print(0, &stack);
 	// swap_a(&stack);
 	//test_print(0, &stack);
-	ft_push(stack.a, stack.b, &stack.index_a, &stack.index_b);
-	ft_push(stack.a, stack.b, &stack.index_a, &stack.index_b);
-	ft_push(stack.a, stack.b, &stack.index_a, &stack.index_b);
+	ft_rotate(stack.a, &stack.index_a);
+	ft_rotate(stack.a, &stack.index_a);
+	ft_rotate(stack.a, &stack.index_a);
 	test_print(0, &stack);
-	ft_push(stack.b, stack.a, &stack.index_b, &stack.index_a);
-	ft_push(stack.b, stack.a, &stack.index_b, &stack.index_a);
+	ft_reverse_rotate(stack.a, &stack.index_a);
+	ft_reverse_rotate(stack.a, &stack.index_a);
 	test_print(0, &stack);
 	free(stack.a);
 	free(stack.b);
@@ -51,6 +51,4 @@ void	test_print(int len, t_stacks *stack)
 		printf("Stack B na posição %i é: %i\n", len, stack->b[len]);
 		len++;
 	}
-	printf("\nTamanho de stack.a é: %i\n", stack->index_a);
-	printf("Tamanho de stack.b é: %i\n\n", stack->index_b);
 }
