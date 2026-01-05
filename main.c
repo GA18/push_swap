@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:18:33 by g-alves-          #+#    #+#             */
-/*   Updated: 2026/01/03 16:45:18 by g-alves-         ###   ########.fr       */
+/*   Updated: 2026/01/05 18:20:04 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,9 @@ int	main(int argc, char **argv)
 	ft_init_stack_a(1, argc, argv, &stack);
 	stack.b = malloc(stack.index_a * sizeof(int));
 	ft_check_alocate(stack.b);
-	//ft_controler(&stack);
-	//test_print(0, &stack);
-	// swap_a(&stack);
-	//test_print(0, &stack);
-	ft_rotate(stack.a, &stack.index_a);
-	ft_rotate(stack.a, &stack.index_a);
-	ft_rotate(stack.a, &stack.index_a);
+	ft_normalization_stack_a(&stack);
 	test_print(0, &stack);
-	ft_reverse_rotate(stack.a, &stack.index_a);
-	ft_reverse_rotate(stack.a, &stack.index_a);
+	ft_radix_sort(&stack);
 	test_print(0, &stack);
 	free(stack.a);
 	free(stack.b);

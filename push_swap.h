@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 18:22:58 by g-alves-          #+#    #+#             */
-/*   Updated: 2026/01/03 17:56:15 by g-alves-         ###   ########.fr       */
+/*   Updated: 2026/01/05 18:26:13 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,23 @@ void			ft_rotate(int *stack, int *size);
 void			ft_reverse_rotate(int *stack, int *size);
 void			ft_remove_top(int *stack, int *size);
 void			ft_remove_down(int *stack, int *size);
+int				sa(t_stacks *stack);
+int				sb(t_stacks *stack);
+int				ss(t_stacks *stack);
+int				pa(t_stacks *stack);
+int				pb(t_stacks *stack);
+int				ra(t_stacks *stack);
+int				rb(t_stacks *stack);
+int				rr(t_stacks *stack);
+int				rra(t_stacks *stack);
+int				rrb(t_stacks *stack);
+int				rrr(t_stacks *stack);
+void			ft_normalization_stack_a(t_stacks *stack);
+void			ft_sorted_copy(t_stacks *stack, int *copy);
+void			ft_fill_copy(t_stacks *stack, int *copy, int index_scan);
+void			ft_radix_sort(t_stacks *stack);
+int				ft_count_bits(t_stacks *stack);
+void			ft_shift_bits(t_stacks *stack);
 
 
 #endif

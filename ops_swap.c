@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   ops_swap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/02 13:09:51 by g-alves-          #+#    #+#             */
-/*   Updated: 2026/01/03 17:19:47 by g-alves-         ###   ########.fr       */
+/*   Created: 2026/01/03 19:22:08 by g-alves-          #+#    #+#             */
+/*   Updated: 2026/01/03 23:16:26 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,33 +21,30 @@ void	ft_swap(int *stack)
 	stack[1] = tmp;
 }
 
-
-void	ft_push(int *origin, int *destiny, int *size_o, int *size_d)
+int	sa(t_stacks *stack)
 {
-	int	tmp;
-
-	tmp = origin[0];
-	ft_shift_up(origin, size_o);
-	(*size_o)--;
-	ft_shift_down(destiny, size_d);
-	(*size_d)++;
-	destiny[0] = tmp;
+	if (stack->index_a < 2)
+		return (0);
+	ft_swap(stack->a);
+	write(1, "sa\n", 3);
+	return (1);
 }
 
-void	ft_rotate(int *stack, int *size)
+int	sb(t_stacks *stack)
 {
-	int	tmp;
-
-	tmp = stack[0];
-	ft_shift_up(stack, size);
-	stack[*size -1] = tmp;
+	if (stack->index_b < 2)
+		return (0);
+	ft_swap(stack->b);
+	write(1, "sb\n", 3);
+	return (1);
 }
 
-void	ft_reverse_rotate(int *stack, int *size)
+int	ss(t_stacks *stack)
 {
-	int	tmp;
-
-	tmp = stack[*size -1];
-	ft_shift_down(stack, size);
-	stack[0] = tmp;
+	if (stack->index_a < 2 || stack->index_a < 2)
+		return (0);
+	ft_swap(stack->a);
+	ft_swap(stack->b);
+	write(1, "ss\n", 3);
+	return (1);
 }
