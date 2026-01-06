@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 18:22:58 by g-alves-          #+#    #+#             */
-/*   Updated: 2026/01/05 18:26:13 by g-alves-         ###   ########.fr       */
+/*   Updated: 2026/01/05 20:05:12 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,5 @@ void			ft_sorted_copy(t_stacks *stack, int *copy);
 void			ft_fill_copy(t_stacks *stack, int *copy, int index_scan);
 void			ft_radix_sort(t_stacks *stack);
 int				ft_count_bits(t_stacks *stack);
-void			ft_shift_bits(t_stacks *stack);
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 16:50:48 by g-alves-          #+#    #+#             */
-/*   Updated: 2026/01/05 18:50:40 by g-alves-         ###   ########.fr       */
+/*   Updated: 2026/01/05 21:48:53 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,33 @@
 
 void	ft_radix_sort(t_stacks *stack)
 {
-	int	index_current;
+	int	fix_size;
 	int	max_bits;
+	int	bit;
 
+	bit = 1;
 	max_bits = ft_count_bits(stack);
-	while (max_bits > 0)
+	while (max_bits-- > 0)
 	{
-		index_current = 0;
-		while (index_current < stack->index_a)
+		fix_size = stack->index_a;
+		while (fix_size-- > 0)
 		{
-			if ((stack->a[0] & 1) == 0)
+			if ((stack->a[0] & bit) == 0)
 				pb(stack);
 			else
 				ra(stack);
-			index_current++;
 		}
-		index_current = 0;
-		while (index_current <= stack->index_b)
+		while (stack->index_b > 0)
 		{
+			write(1, "A MERDA TA AQUI, valor:", 30);
 			pa(stack);
-			index_current++;
 		}
-		ft_shift_bits(stack);
-		max_bits--;
+		bit <<= 1;
 	}
+	stack->index_b = stack->index_a;
+	// while (stack->index_b-- > 0)
+	// 	printf("AQUI TEM LIXO NA POS %i, valor: %i", stack->index_b, stack->b[stack->index_b]);
+
 }
 
 int	ft_count_bits(t_stacks *stack)
@@ -53,16 +56,4 @@ int	ft_count_bits(t_stacks *stack)
 		big_index >>= 1;
 	}
 	return (count_bits);
-}
-
-void	ft_shift_bits(t_stacks *stack)
-{
-	int	index_current;
-
-	index_current = 0;
-	while (index_current < stack->index_a)
-	{
-		stack->a[index_current] >>= 1;
-		index_current++;
-	}
 }

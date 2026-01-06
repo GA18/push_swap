@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 13:18:33 by g-alves-          #+#    #+#             */
-/*   Updated: 2026/01/05 18:20:04 by g-alves-         ###   ########.fr       */
+/*   Updated: 2026/01/05 21:27:12 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	main(int argc, char **argv)
 	stack.b = malloc(stack.index_a * sizeof(int));
 	ft_check_alocate(stack.b);
 	ft_normalization_stack_a(&stack);
-	test_print(0, &stack);
+	//test_print(0, &stack);
 	ft_radix_sort(&stack);
-	test_print(0, &stack);
+	//test_print(0, &stack);
 	free(stack.a);
 	free(stack.b);
 }
