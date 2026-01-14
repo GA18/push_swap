@@ -31,16 +31,9 @@ void	ft_radix_sort(t_stacks *stack)
 				ra(stack);
 		}
 		while (stack->index_b > 0)
-		{
-			write(1, "A MERDA TA AQUI, valor:", 30);
 			pa(stack);
-		}
 		bit <<= 1;
 	}
-	stack->index_b = stack->index_a;
-	// while (stack->index_b-- > 0)
-	// 	printf("AQUI TEM LIXO NA POS %i, valor: %i", stack->index_b, stack->b[stack->index_b]);
-
 }
 
 int	ft_count_bits(t_stacks *stack)

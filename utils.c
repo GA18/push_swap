@@ -64,23 +64,16 @@ size_t	ft_strlen(const char *l)
 	return (length);
 }
 
-void	ft_check_duplicate(t_stacks *stack)
+void	ft_bzero(void *s, size_t n)
 {
-	int	index;
-	int	last_index;
+	unsigned int	index;
+	unsigned char	*casting_void;
 
 	index = 0;
-	last_index = stack->index_a - 1;
-
-	if (last_index < 1)
-		return ;
-	while (index < last_index)
+	casting_void = (unsigned char *)s;
+	while (index < n)
 	{
-		if (stack->a[index] == stack->a[last_index])
-		{
-			free(stack->a);
-			ft_msg_error();
-		}
+		casting_void[index] = 0;
 		index++;
 	}
 }

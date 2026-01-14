@@ -18,30 +18,36 @@ int	main(int argc, char **argv)
 
 	ft_parser(1, argc, argv, &stack);
 	ft_init_stack_a(1, argc, argv, &stack);
-	stack.b = malloc(stack.index_a * sizeof(int));
-	ft_check_alocate(stack.b);
+	ft_init_stack_b(&stack);
 	ft_normalization_stack_a(&stack);
-	//test_print(0, &stack);
-	ft_radix_sort(&stack);
-	//test_print(0, &stack);
+	if (stack.index_a == 2)
+		ft_order_two(&stack);
+	if (stack.index_a == 3)
+		ft_order_three(&stack);
+	if (stack.index_a == 4)
+		ft_order_for(&stack);
+	if (stack.index_a == 5)
+		ft_order_five(&stack);
+	if (stack.index_a > 5)
+		ft_radix_sort(&stack);
 	free(stack.a);
 	free(stack.b);
 }
 
-void	test_print(int len, t_stacks *stack)
-{
-	printf("\nO tamanho do array é A é: %i\n", stack->index_a);
-	printf("O tamanho do array é B é: %i\n\n", stack->index_b);
-	while (stack->index_a > len)
-	{
-		printf("Stack A na posição %i é: %i\n", len, stack->a[len]);
-		len++;
-	}
-	len = 0;
-	printf("\n");
-	while (stack->index_b > len)
-	{
-		printf("Stack B na posição %i é: %i\n", len, stack->b[len]);
-		len++;
-	}
-}
+// void	test_print(int len, t_stacks *stack)
+// {
+// 	printf("\nO tamanho do array é A é: %i\n", stack->index_a);
+// 	printf("O tamanho do array é B é: %i\n\n", stack->index_b);
+// 	while (stack->index_a > len)
+// 	{
+// 		printf("Stack A na posição %i é: %i\n", len, stack->a[len]);
+// 		len++;
+// 	}
+// 	len = 0;
+// 	printf("\n");
+// 	while (stack->index_b > len)
+// 	{
+// 		printf("Stack B na posição %i é: %i\n", len, stack->b[len]);
+// 		len++;
+// 	}
+// }

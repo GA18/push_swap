@@ -17,8 +17,8 @@ void	ft_push(int *origin, int *destiny, int *size_o, int *size_d)
 	int	tmp;
 
 	tmp = origin[0];
-	(*size_o)--;
 	ft_remove_top(origin, size_o);
+	(*size_o)--;
 	(*size_d)++;
 	ft_remove_down(destiny, size_d);
 	destiny[0] = tmp;

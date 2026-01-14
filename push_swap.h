@@ -38,10 +38,11 @@ void			ft_parser(int index_arg, int argc, char **argv,
 					t_stacks *stack);
 void			ft_init_stack_a(int index_arg, int argc, char **argv,
 					t_stacks *stack);
+void			ft_init_stack_b(t_stacks *stack);
 int				ft_fill_stack_a(char **string_arg, int index_arg,
 					t_stacks *fill_st_a);
 void			ft_check_duplicate(t_stacks *fill_st_a);
-void			test_print(int len, t_stacks *stack);
+//void			test_print(int len, t_stacks *stack);
 void			ft_swap(int *stack);
 void			ft_push(int *origin, int *destiny, int *size_o, int *size_d);
 void			ft_rotate(int *stack, int *size);
@@ -64,5 +65,13 @@ void			ft_sorted_copy(t_stacks *stack, int *copy);
 void			ft_fill_copy(t_stacks *stack, int *copy, int index_scan);
 void			ft_radix_sort(t_stacks *stack);
 int				ft_count_bits(t_stacks *stack);
+void			ft_bzero(void *s, size_t n);
+void			*ft_calloc(size_t nmemb, size_t size);
+void			ft_is_order(t_stacks *stack, int *copy, int count);
+void			ft_order_three(t_stacks *stack);
+void			ft_order_for(t_stacks *stack);
+void			ft_order_five(t_stacks *stack);
+int				ft_big_number(t_stacks *stack);
+void			ft_order_two(t_stacks *stack);
 
 #endif

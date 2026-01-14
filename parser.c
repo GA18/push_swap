@@ -36,7 +36,7 @@ void	ft_init_stack_a(int index_arg, int argc, char **argv, t_stacks *stack)
 {
 	char	*string_arg;
 
-	stack->a = malloc(stack->total * sizeof(int));
+	stack->a = ft_calloc(stack->total, sizeof(int));
 	ft_check_alocate(stack->a);
 	stack->index_a = 0;
 	while (index_arg < argc)
@@ -91,7 +91,7 @@ int	ft_fill_stack_a(char **string_arg, int index_arg, t_stacks *fill_st_a)
 		(*string_arg)++;
 	while ((*string_arg)[index_arg] && (*string_arg)[index_arg] != ' ')
 		index_arg++;
-	number = malloc((index_arg + 1) * sizeof(char));
+	number = ft_calloc((index_arg + 1), sizeof(char));
 	ft_check_alocate(number);
 	number[index_arg] = '\0';
 	count_revert_order = 0;

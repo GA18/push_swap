@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRC = main.c	utils.c	parser.c ops_push.c ops_reverse_rotate.c ops_swap.c ops_rotate.c stack_utils.c normalization.c radix.c
+SRC = main.c utils.c parser.c ops_push.c ops_reverse_rotate.c ops_swap.c ops_rotate.c stack_utils.c normalization.c radix.c small_sort.c
 
 OBJ = $(SRC:%.c=%.o)
 
