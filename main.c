@@ -33,21 +33,3 @@ int	main(int argc, char **argv)
 	free(stack.a);
 	free(stack.b);
 }
-
-// void	test_print(int len, t_stacks *stack)
-// {
-// 	printf("\nO tamanho do array é A é: %i\n", stack->index_a);
-// 	printf("O tamanho do array é B é: %i\n\n", stack->index_b);
-// 	while (stack->index_a > len)
-// 	{
-// 		printf("Stack A na posição %i é: %i\n", len, stack->a[len]);
-// 		len++;
-// 	}
-// 	len = 0;
-// 	printf("\n");
-// 	while (stack->index_b > len)
-// 	{
-// 		printf("Stack B na posição %i é: %i\n", len, stack->b[len]);
-// 		len++;
-// 	}
-// }

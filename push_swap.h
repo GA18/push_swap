@@ -42,7 +42,6 @@ void			ft_init_stack_b(t_stacks *stack);
 int				ft_fill_stack_a(char **string_arg, int index_arg,
 					t_stacks *fill_st_a);
 void			ft_check_duplicate(t_stacks *fill_st_a);
-//void			test_print(int len, t_stacks *stack);
 void			ft_swap(int *stack);
 void			ft_push(int *origin, int *destiny, int *size_o, int *size_d);
 void			ft_rotate(int *stack, int *size);

@@ -17,7 +17,7 @@ OBJ = $(SRC:%.c=%.o)
 
 CC = cc
 
-CFLAGS = -g3 -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

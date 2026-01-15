@@ -86,7 +86,7 @@ int	ft_big_number(t_stacks *stack)
 
 	index = 0;
 	big = stack->a[index];
-	while (index < stack->index_a)
+	while (index < (stack->index_a - 1))
 	{
 		if (big < stack->a[index + 1])
 			big = stack->a[index + 1];
